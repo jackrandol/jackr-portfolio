@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import ComingSoonScene from "./ComingSoonScene";
+import jr from "./assets/jr.jpg";
 
 export default function Home() {
   useEffect(() => {
@@ -7,7 +8,9 @@ export default function Home() {
   }, []);
   return (
     <>
-      <p>Hello Jacks World</p>
+      <p>Hello Jack's World</p>
+      <div className="scene"></div>
+      <img src={jr} alt="logo"></img>
     </>
   );
 }
