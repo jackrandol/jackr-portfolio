@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import jr from "./assets/jr.jpg";
+import jr from "./assets/JRWrapper.jpg";
 
 export default function ComingSoonScene() {
   var scene = new THREE.Scene();
@@ -10,7 +10,7 @@ export default function ComingSoonScene() {
 
   renderer.setSize(200, 200);
 
-  let canvasElement = document.querySelector(".scene");
+  let canvasElement = document.querySelector(".sceneY");
   canvasElement.appendChild(renderer.domElement);
 
   var light = new THREE.AmbientLight(0xffffff);
@@ -35,8 +35,7 @@ export default function ComingSoonScene() {
 
   var render = function () {
     requestAnimationFrame(render);
-    imageBall.rotation.x += 0.005;
-    imageBall.rotation.y += 0.005;
+    imageBall.rotation.y += 0.008;
     renderer.render(scene, camera);
   };
   render();

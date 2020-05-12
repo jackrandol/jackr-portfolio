@@ -1,16 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect, Link } from "react";
 import ComingSoonScene from "./ComingSoonScene";
-import jr from "./assets/jr.jpg";
 
 export default function Home() {
   useEffect(() => {
     ComingSoonScene();
   }, []);
   return (
-    <>
-      <p>Hello Jack's World</p>
-      <div className="scene"></div>
-      <img src={jr} alt="logo"></img>
-    </>
+    <div>
+      <div className="header">
+        <p>Jack Randol </p>
+        <p>
+          for now visit my{" "}
+          <a href="http://www.github.com/jackrandol">Github!</a>
+        </p>
+      </div>
+      <div className="sceneX">
+        <div className="sceneY"></div>
+      </div>
+    </div>
   );
 }
