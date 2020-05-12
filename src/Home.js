@@ -8,10 +8,9 @@ export default function Home() {
   return (
     <div>
       <div className="header">
-        <p>Jack Randol </p>
         <p>
-          for now visit my{" "}
-          <a href="http://www.github.com/jackrandol">Github!</a>
+          Jack Randol's website is under construction. For now visit my{" "}
+          <a href="http://www.github.com/jackrandol">Github.</a>
         </p>
       </div>
       <div className="sceneX">

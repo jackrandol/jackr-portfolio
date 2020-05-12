@@ -16,8 +16,11 @@ export default function ComingSoonScene() {
   var light = new THREE.AmbientLight(0xffffff);
   scene.add(light);
 
+  var light2 = new THREE.PointLight(0xf800, 0.2);
+  scene.add(light2);
+
   var geometry = new THREE.SphereGeometry(10, 32, 32);
-  var material = new THREE.MeshPhongMaterial();
+  var material = new THREE.MeshStandardMaterial();
 
   var loader = new THREE.TextureLoader();
 

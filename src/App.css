@@ -8,15 +8,12 @@
 
 .header {
   position: fixed;
-  background-color: yellow;
-  width: 100%;
-  /* height: 10vh; */
-  color: black;
+  padding-left: 10px;
+  font-size: 20px;
+  z-index: 5;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  font-size: 20px;
-  padding: 0px 10px;
+  align-content: space-between;
 }
 
 .sceneX {
@@ -29,6 +26,14 @@
   height: var(--width);
   width: var(--width);
   animation: y var(--y-speed) linear infinite alternate;
+}
+
+.sceneY:hover {
+  animation-play-state: paused;
+}
+
+.sceneX:hover {
+  animation-play-state: paused;
 }
 
 @keyframes x {
