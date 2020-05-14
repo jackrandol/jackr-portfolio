@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import jr from "./assets/JRWrapper.jpg";
+import jr from "./assets/JRWrapper2.jpg";
 
 export default function ComingSoonScene() {
   var scene = new THREE.Scene();
@@ -25,12 +25,6 @@ export default function ComingSoonScene() {
   var loader = new THREE.TextureLoader();
 
   material.map = loader.load(jr);
-
-  //   window.addEventListener("resize", () => {
-  //     renderer.setSize(window.innerWidth, window.innerHeight);
-  //     camera.aspect = window.innerWidth / window.innerHeight;
-  //     camera.updateProjectionMatrix();
-  //   });
 
   var imageBall = new THREE.Mesh(geometry, material);
 

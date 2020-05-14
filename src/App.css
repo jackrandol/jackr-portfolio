@@ -30,6 +30,7 @@
 
 .sceneY:hover {
   animation-play-state: paused;
+  cursor: pointer;
 }
 
 .sceneX:hover {
