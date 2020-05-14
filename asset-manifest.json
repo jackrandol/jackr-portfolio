@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/jackrandol/jackr-portfolio/static/css/main.727b17bc.chunk.css",
-    "main.js": "/jackrandol/jackr-portfolio/static/js/main.1f094b35.chunk.js",
-    "main.js.map": "/jackrandol/jackr-portfolio/static/js/main.1f094b35.chunk.js.map",
-    "runtime-main.js": "/jackrandol/jackr-portfolio/static/js/runtime-main.b0ecd574.js",
-    "runtime-main.js.map": "/jackrandol/jackr-portfolio/static/js/runtime-main.b0ecd574.js.map",
-    "static/js/2.d7d40218.chunk.js": "/jackrandol/jackr-portfolio/static/js/2.d7d40218.chunk.js",
-    "static/js/2.d7d40218.chunk.js.map": "/jackrandol/jackr-portfolio/static/js/2.d7d40218.chunk.js.map",
-    "index.html": "/jackrandol/jackr-portfolio/index.html",
-    "precache-manifest.ea196b2355e83fe99c08ec7e98fa798e.js": "/jackrandol/jackr-portfolio/precache-manifest.ea196b2355e83fe99c08ec7e98fa798e.js",
-    "service-worker.js": "/jackrandol/jackr-portfolio/service-worker.js",
-    "static/css/main.727b17bc.chunk.css.map": "/jackrandol/jackr-portfolio/static/css/main.727b17bc.chunk.css.map",
-    "static/js/2.d7d40218.chunk.js.LICENSE.txt": "/jackrandol/jackr-portfolio/static/js/2.d7d40218.chunk.js.LICENSE.txt",
-    "static/media/JRWrapper2.jpg": "/jackrandol/jackr-portfolio/static/media/JRWrapper2.b63f9505.jpg"
+    "main.css": "/jackr-portfolio/static/css/main.727b17bc.chunk.css",
+    "main.js": "/jackr-portfolio/static/js/main.1dda8e79.chunk.js",
+    "main.js.map": "/jackr-portfolio/static/js/main.1dda8e79.chunk.js.map",
+    "runtime-main.js": "/jackr-portfolio/static/js/runtime-main.08e9494b.js",
+    "runtime-main.js.map": "/jackr-portfolio/static/js/runtime-main.08e9494b.js.map",
+    "static/js/2.d7d40218.chunk.js": "/jackr-portfolio/static/js/2.d7d40218.chunk.js",
+    "static/js/2.d7d40218.chunk.js.map": "/jackr-portfolio/static/js/2.d7d40218.chunk.js.map",
+    "index.html": "/jackr-portfolio/index.html",
+    "precache-manifest.d1b85a686cf390335387b36cfe3da621.js": "/jackr-portfolio/precache-manifest.d1b85a686cf390335387b36cfe3da621.js",
+    "service-worker.js": "/jackr-portfolio/service-worker.js",
+    "static/css/main.727b17bc.chunk.css.map": "/jackr-portfolio/static/css/main.727b17bc.chunk.css.map",
+    "static/js/2.d7d40218.chunk.js.LICENSE.txt": "/jackr-portfolio/static/js/2.d7d40218.chunk.js.LICENSE.txt",
+    "static/media/JRWrapper2.jpg": "/jackr-portfolio/static/media/JRWrapper2.b63f9505.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.b0ecd574.js",
+    "static/js/runtime-main.08e9494b.js",
     "static/js/2.d7d40218.chunk.js",
     "static/css/main.727b17bc.chunk.css",
-    "static/js/main.1f094b35.chunk.js"
+    "static/js/main.1dda8e79.chunk.js"
   ]
 }
