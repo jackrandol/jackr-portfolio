@@ -16,6 +16,16 @@
   align-content: space-between;
 }
 
+.sceneAbout {
+  height: 220px;
+  width: 220px;
+}
+
+.sceneCV {
+  height: 200px;
+  width: 200px;
+}
+
 .sceneX {
   height: var(--width);
   width: var(--width);
@@ -47,4 +57,19 @@
   100% {
     transform: translateY(calc(100vh - var(--width)));
   }
+}
+
+.pauseButton {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-style: normal;
+  font-size: 40px;
+  padding: 0px 15px;
+}
+
+.pauseButton:hover {
+  background-color: black;
+  color: white;
+  border-radius: 40px;
 }
