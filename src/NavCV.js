@@ -18,8 +18,7 @@ export default function NavCV() {
 
   var light2 = new THREE.PointLight(0xf800, 0.2);
   scene.add(light2);
-
-  var geometry = new THREE.SphereBufferGeometry(8.5, 40, 32);
+  var geometry = new THREE.TorusBufferGeometry(6, 2.5, 25, 100);
   var material = new THREE.MeshBasicMaterial();
 
   var loader = new THREE.TextureLoader();
@@ -33,7 +32,7 @@ export default function NavCV() {
   var render = function () {
     requestAnimationFrame(render);
     cv.rotation.y += 0.008;
-
+    cv.rotation.x += 0.005;
     renderer.render(scene, camera);
   };
   render();

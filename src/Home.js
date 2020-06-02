@@ -20,10 +20,19 @@ export default function Home() {
           <div className="sceneY"></div>
         </div>
       </a>
-      <div className="sceneAbout"></div>
-      <div className="sceneProjects"></div>
-      <div className="sceneCV"></div>
-      <div className="sceneContact"></div>
+      <div className="sceneAbout sceneX">
+        <div className="sceneY"></div>
+      </div>
+
+      <div className="sceneX">
+        <div className="sceneProjects"></div>
+      </div>
+      <div className="sceneX">
+        <div className="sceneCV"></div>
+      </div>
+      <div className="sceneX">
+        <div className="sceneContact"></div>
+      </div>
       <div className="pauseButton">PAUSE</div>
     </>
   );

@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import projectsImage from "./assets/projects.jpg";
 
 export default function NavProjects(scale) {
   var scene = new THREE.Scene();
@@ -31,8 +32,11 @@ export default function NavProjects(scale) {
 
   var path = new CustomSinCurve(5);
   var geometry = new THREE.TubeBufferGeometry(path, 50, 2.5, 30, false);
-  var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+  var material = new THREE.MeshBasicMaterial();
   var mesh = new THREE.Mesh(geometry, material);
+  var loader = new THREE.TextureLoader();
+
+  material.map = loader.load(projectsImage);
   scene.add(mesh);
 
   function CustomSinCurve(scale) {

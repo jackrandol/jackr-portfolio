@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import contactImage from "./assets/contact.jpg";
 
 export default function NavContact() {
   var scene = new THREE.Scene();
@@ -17,9 +18,12 @@ export default function NavContact() {
 
   var light2 = new THREE.PointLight(0xf800, 0.2);
   scene.add(light2);
+  var geometry = new THREE.SphereBufferGeometry(7, 40, 32);
+  var material = new THREE.MeshBasicMaterial();
 
-  var geometry = new THREE.TorusBufferGeometry(6, 2.5, 25, 100);
-  var material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+  var loader = new THREE.TextureLoader();
+
+  material.map = loader.load(contactImage);
 
   var contact = new THREE.Mesh(geometry, material);
 
@@ -28,7 +32,6 @@ export default function NavContact() {
   var render = function () {
     requestAnimationFrame(render);
     contact.rotation.y += 0.008;
-    contact.rotation.x += 0.005;
     renderer.render(scene, camera);
   };
   render();

@@ -1,41 +1,40 @@
 :root {
   margin: 0;
-  --width: 200px;
+  --width: 220px;
   --x-speed: 3.75s;
   --y-speed: 2.4s;
   --transition-speed: 2.2s;
 }
 
-.header {
-  position: fixed;
-  padding-left: 10px;
-  font-size: 20px;
-  z-index: 5;
-  display: flex;
-  flex-direction: row;
-  align-content: space-between;
+body {
+  overflow: hidden;
+  margin: 0;
 }
 
 .sceneAbout {
-  height: 220px;
-  width: 220px;
+  position: fixed;
+  bottom: 0px;
+  right: 10px;
+  height: var(--width);
+  width: var(--width);
+  animation: y var(--y-speed) linear infinite alternate;
 }
 
-.sceneCV {
-  height: 200px;
-  width: 200px;
+.sceneY,
+.sceneCV,
+.sceneProjects,
+.sceneContact {
+  height: var(--width);
+  width: var(--width);
+  animation: y var(--y-speed) linear infinite alternate;
+  position: fixed;
 }
 
 .sceneX {
   height: var(--width);
   width: var(--width);
   animation: x var(--x-speed) linear infinite alternate;
-}
-
-.sceneY {
-  height: var(--width);
-  width: var(--width);
-  animation: y var(--y-speed) linear infinite alternate;
+  position: fixed;
 }
 
 .sceneY:hover {
