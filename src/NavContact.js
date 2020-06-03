@@ -19,7 +19,10 @@ export default function NavContact() {
   var light2 = new THREE.PointLight(0xf800, 0.2);
   scene.add(light2);
   var geometry = new THREE.SphereBufferGeometry(7, 40, 32);
-  var material = new THREE.MeshBasicMaterial();
+  var material = new THREE.MeshPhongMaterial({
+    reflectivity: 0.5,
+    refractionRatio: 1,
+  });
 
   var loader = new THREE.TextureLoader();
 

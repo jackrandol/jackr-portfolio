@@ -1,9 +1,13 @@
 :root {
   margin: 0;
-  --width: 220px;
+  /* --width: 220px; */
   --x-speed: 3.75s;
   --y-speed: 2.4s;
   --transition-speed: 2.2s;
+}
+
+.about {
+  font-size: 50px;
 }
 
 body {
@@ -13,11 +17,11 @@ body {
 
 .sceneAbout {
   position: fixed;
-  bottom: 0px;
-  right: 10px;
-  height: var(--width);
-  width: var(--width);
-  animation: y var(--y-speed) linear infinite alternate;
+  right: 0px;
+  /* height: var(--width);
+  width: var(--width); */
+  /* animation: y2 var(--y-speed) linear infinite alternate;
+  background-color: pink; */
 }
 
 .sceneY,
@@ -35,6 +39,15 @@ body {
   width: var(--width);
   animation: x var(--x-speed) linear infinite alternate;
   position: fixed;
+}
+
+.sceneX2 {
+  height: var(--width);
+  width: var(--width);
+  animation: x2 var(--x-speed) linear infinite alternate;
+  position: fixed;
+  right: 0px;
+  background-color: pink;
 }
 
 .sceneY:hover {
@@ -55,6 +68,18 @@ body {
 @keyframes y {
   100% {
     transform: translateY(calc(100vh - var(--width)));
+  }
+}
+
+@keyframes y2 {
+  100% {
+    transform: translateY(calc(100vh - var(--width)));
+  }
+}
+
+@keyframes x2 {
+  100% {
+    transform: translateX(calc(-100vh - var(--width)));
   }
 }
 
