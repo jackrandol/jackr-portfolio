@@ -4,7 +4,6 @@ import NavAbout from "./NavAbout";
 // import NavContact from "./NavContact";
 // import NavCV from "./NavCV";
 // import NavProjects from "./NavProjects";
-
 import { withRouter } from "react-router-dom";
 
 function Home(props) {
@@ -20,7 +19,7 @@ function Home(props) {
     // NavContact();
     // NavCV();
     // NavProjects();
-  }, []);
+  });
 
   return (
     <>

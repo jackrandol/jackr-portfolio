@@ -17,11 +17,6 @@ body {
 
 .sceneAbout {
   position: fixed;
-  right: 0px;
-  /* height: var(--width);
-  width: var(--width); */
-  /* animation: y2 var(--y-speed) linear infinite alternate;
-  background-color: pink; */
 }
 
 .sceneY,
@@ -47,7 +42,6 @@ body {
   animation: x2 var(--x-speed) linear infinite alternate;
   position: fixed;
   right: 0px;
-  background-color: pink;
 }
 
 .sceneY:hover {
