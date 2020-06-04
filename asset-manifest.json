@@ -1,23 +1,26 @@
 {
   "files": {
-    "main.css": "/jackr-portfolio/static/css/main.727b17bc.chunk.css",
-    "main.js": "/jackr-portfolio/static/js/main.1dda8e79.chunk.js",
-    "main.js.map": "/jackr-portfolio/static/js/main.1dda8e79.chunk.js.map",
+    "main.css": "/jackr-portfolio/static/css/main.588f8bdf.chunk.css",
+    "main.js": "/jackr-portfolio/static/js/main.ff7516ac.chunk.js",
+    "main.js.map": "/jackr-portfolio/static/js/main.ff7516ac.chunk.js.map",
     "runtime-main.js": "/jackr-portfolio/static/js/runtime-main.08e9494b.js",
     "runtime-main.js.map": "/jackr-portfolio/static/js/runtime-main.08e9494b.js.map",
-    "static/js/2.d7d40218.chunk.js": "/jackr-portfolio/static/js/2.d7d40218.chunk.js",
-    "static/js/2.d7d40218.chunk.js.map": "/jackr-portfolio/static/js/2.d7d40218.chunk.js.map",
+    "static/js/2.1d1192fd.chunk.js": "/jackr-portfolio/static/js/2.1d1192fd.chunk.js",
+    "static/js/2.1d1192fd.chunk.js.map": "/jackr-portfolio/static/js/2.1d1192fd.chunk.js.map",
     "index.html": "/jackr-portfolio/index.html",
-    "precache-manifest.a3cb11ec9cbc89be30444ce46da39457.js": "/jackr-portfolio/precache-manifest.a3cb11ec9cbc89be30444ce46da39457.js",
+    "precache-manifest.28ee398b1c3f720e26d476433773df59.js": "/jackr-portfolio/precache-manifest.28ee398b1c3f720e26d476433773df59.js",
     "service-worker.js": "/jackr-portfolio/service-worker.js",
-    "static/css/main.727b17bc.chunk.css.map": "/jackr-portfolio/static/css/main.727b17bc.chunk.css.map",
-    "static/js/2.d7d40218.chunk.js.LICENSE.txt": "/jackr-portfolio/static/js/2.d7d40218.chunk.js.LICENSE.txt",
-    "static/media/JRWrapper2.jpg": "/jackr-portfolio/static/media/JRWrapper2.b63f9505.jpg"
+    "static/css/main.588f8bdf.chunk.css.map": "/jackr-portfolio/static/css/main.588f8bdf.chunk.css.map",
+    "static/js/2.1d1192fd.chunk.js.LICENSE.txt": "/jackr-portfolio/static/js/2.1d1192fd.chunk.js.LICENSE.txt",
+    "static/media/CV.jpg": "/jackr-portfolio/static/media/CV.374987ab.jpg",
+    "static/media/about.jpg": "/jackr-portfolio/static/media/about.a8ea7693.jpg",
+    "static/media/contact.jpg": "/jackr-portfolio/static/media/contact.bcd6dca8.jpg",
+    "static/media/projects.jpg": "/jackr-portfolio/static/media/projects.5ac8ca04.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.08e9494b.js",
-    "static/js/2.d7d40218.chunk.js",
-    "static/css/main.727b17bc.chunk.css",
-    "static/js/main.1dda8e79.chunk.js"
+    "static/js/2.1d1192fd.chunk.js",
+    "static/css/main.588f8bdf.chunk.css",
+    "static/js/main.ff7516ac.chunk.js"
   ]
 }
