@@ -1,6 +1,9 @@
+* {
+  margin: 0;
+}
+
 :root {
   margin: 0;
-  /* --width: 220px; */
   --x-speed: 3.75s;
   --y-speed: 2.4s;
   --transition-speed: 2.2s;

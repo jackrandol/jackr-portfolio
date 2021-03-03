@@ -1,10 +1,10 @@
-import * as THREE from "three";
-import aboutImage from "./assets/about.jpg";
-import contactImage from "./assets/contact.jpg";
-import projectImage from "./assets/projects.jpg";
-import cvImage from "./assets/CV.jpg";
+import * as THREE from 'three';
+import aboutImage from './assets/about.jpg';
+import contactImage from './assets/contact.jpg';
+import projectImage from './assets/projects.jpg';
+import cvImage from './assets/CV.jpg';
 
-import { Interaction } from "three.interaction";
+import { Interaction } from 'three.interaction';
 
 export default function homeScene(meshClickCallback) {
   var scene = new THREE.Scene();
@@ -14,13 +14,13 @@ export default function homeScene(meshClickCallback) {
     1,
     10000
   );
-  camera.position.z = 1000;
+  camera.position.z = 1400;
 
   var renderer = new THREE.WebGLRenderer({ alpha: true });
 
   renderer.setSize(window.innerWidth, window.innerHeight);
 
-  let canvasElement = document.querySelector(".sceneAbout");
+  let canvasElement = document.querySelector('.sceneAbout');
   canvasElement.appendChild(renderer.domElement);
 
   var light = new THREE.AmbientLight(0xffffff);
@@ -30,13 +30,13 @@ export default function homeScene(meshClickCallback) {
   scene.add(light2);
   var loader = new THREE.TextureLoader();
 
-  var boxGeometry = new THREE.BoxGeometry(200, 200, 200);
+  var boxGeometry = new THREE.BoxGeometry(500, 500, 500);
   var boxMaterial = new THREE.MeshPhongMaterial();
 
-  var sphereGeometry = new THREE.SphereBufferGeometry(200, 40, 32);
+  var sphereGeometry = new THREE.SphereBufferGeometry(300, 40, 32);
   var sphereMaterial = new THREE.MeshPhongMaterial({});
 
-  var torusGeometry = new THREE.TorusBufferGeometry(150, 70, 25, 100);
+  var torusGeometry = new THREE.TorusBufferGeometry(300, 120, 25, 100);
   var torusMaterial = new THREE.MeshBasicMaterial();
 
   //// this is all to map a curve ////////////////
@@ -56,10 +56,10 @@ export default function homeScene(meshClickCallback) {
     this.scale = scale === undefined ? 1 : scale;
   }
 
-  var path = new CustomSinCurve(180);
+  var path = new CustomSinCurve(200);
   //////////////////////////////////////////////
 
-  var tubeGeometry = new THREE.TubeBufferGeometry(path, 200, 70, 30, false);
+  var tubeGeometry = new THREE.TubeBufferGeometry(path, 500, 120, 50, false);
   var tubeMaterial = new THREE.MeshBasicMaterial();
 
   sphereMaterial.map = loader.load(contactImage);
@@ -144,43 +144,43 @@ export default function homeScene(meshClickCallback) {
 
   const interaction = new Interaction(renderer, scene, camera);
 
-  about.on("click", () => {
-    meshClickCallback("about");
+  about.on('click', () => {
+    meshClickCallback('/About');
   });
 
-  cv.on("click", () => {
-    meshClickCallback("about");
+  cv.on('click', () => {
+    meshClickCallback('/cv');
   });
 
-  contact.on("click", () => {
-    meshClickCallback("about");
+  contact.on('click', () => {
+    meshClickCallback('/contact');
   });
 
-  projects.on("click", () => {
-    meshClickCallback("about");
+  projects.on('click', () => {
+    meshClickCallback('/projects');
   });
 
-  about.cursor = "crosshair";
-  cv.cursor = "crosshair";
-  contact.cursor = "crosshair";
-  projects.cursor = "crosshair";
+  about.cursor = 'crosshair';
+  cv.cursor = 'crosshair';
+  contact.cursor = 'crosshair';
+  projects.cursor = 'crosshair';
 
-  window.addEventListener("resize", onWindowResize, false);
+  window.addEventListener('resize', onWindowResize, false);
   function onWindowResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
   }
 
-  let pause = document.getElementById("pauseButton");
+  let pause = document.getElementById('pauseButton');
   pause.onclick = () => {
-    console.log("pause clicked");
+    console.log('pause clicked');
     if (bounceControl === true) {
       bounceControl = false;
-      pause.innerHTML = "PLAY";
+      pause.innerHTML = 'PLAY';
     } else {
       bounceControl = true;
-      pause.innerHTML = "PAUSE";
+      pause.innerHTML = 'PAUSE';
     }
   };
   animate();

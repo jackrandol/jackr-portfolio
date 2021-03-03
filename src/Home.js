@@ -1,23 +1,23 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 // import ComingSoonScene from "./ComingSoonScene";
-import HomeScene from "./HomeScene";
+import HomeScene from './HomeScene';
 
-import { withRouter } from "react-router-dom";
+import { withRouter } from 'react-router-dom';
 
 function Home(props) {
-  useEffect(() => {
-    const meshClickCallback = (mesh) => {
-      console.log("clicked", mesh);
-      props.history.push("/About");
-    };
+  const meshClickCallback = (mesh) => {
+    console.log('clicked', mesh);
+    props.history.push(mesh);
+  };
 
+  useEffect(() => {
     HomeScene(meshClickCallback);
   });
 
   return (
     <>
-      <div className="sceneAbout"></div>
-      <div className="pauseButton" id="pauseButton">
+      <div className='sceneAbout'></div>
+      <div className='pauseButton' id='pauseButton'>
         PAUSE
       </div>
     </>
