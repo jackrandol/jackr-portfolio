@@ -4,8 +4,10 @@ export default function About() {
   return (
     <>
       <p className='about'>About Page</p>
-      Jack is a web developer and designer working on projects working on
-      freelance basis in Berlin, Germany.
+      <h1>
+        Jack is a web developer and designer with an emphasis on creating lively
+        user experiences.
+      </h1>
     </>
   );
 }

@@ -2,7 +2,6 @@ import * as THREE from 'three';
 import aboutImage from './assets/about.jpg';
 import contactImage from './assets/contact.jpg';
 import projectImage from './assets/projects.jpg';
-import cvImage from './assets/CV.jpg';
 
 import { Interaction } from 'three.interaction';
 
@@ -36,58 +35,30 @@ export default function homeScene(meshClickCallback) {
   var sphereGeometry = new THREE.SphereBufferGeometry(300, 40, 32);
   var sphereMaterial = new THREE.MeshPhongMaterial({});
 
-  var torusGeometry = new THREE.TorusBufferGeometry(300, 120, 25, 100);
-  var torusMaterial = new THREE.MeshBasicMaterial();
-
-  //// this is all to map a curve ////////////////
-  CustomSinCurve.prototype = Object.create(THREE.Curve.prototype);
-  CustomSinCurve.prototype.constructor = CustomSinCurve;
-
-  CustomSinCurve.prototype.getPoint = function (t) {
-    var tx = t * 3 - 1.5;
-    var ty = Math.sin(1 * Math.PI * t);
-    var tz = 0;
-
-    return new THREE.Vector3(tx, ty, tz).multiplyScalar(this.scale);
-  };
-  function CustomSinCurve(scale) {
-    THREE.Curve.call(this);
-
-    this.scale = scale === undefined ? 1 : scale;
-  }
-
-  var path = new CustomSinCurve(200);
-  //////////////////////////////////////////////
-
-  var tubeGeometry = new THREE.TubeBufferGeometry(path, 500, 120, 50, false);
-  var tubeMaterial = new THREE.MeshBasicMaterial();
+  var coneGeometry = new THREE.ConeGeometry(230, 600, 200);
+  var coneMaterial = new THREE.MeshPhongMaterial();
 
   sphereMaterial.map = loader.load(contactImage);
   boxMaterial.map = loader.load(aboutImage);
-  torusMaterial.map = loader.load(cvImage);
-  tubeMaterial.map = loader.load(projectImage);
+  coneMaterial.map = loader.load(projectImage);
 
   var contact = new THREE.Mesh(sphereGeometry, sphereMaterial);
   var about = new THREE.Mesh(boxGeometry, boxMaterial);
-  var cv = new THREE.Mesh(torusGeometry, torusMaterial);
-  var projects = new THREE.Mesh(tubeGeometry, tubeMaterial);
+  var projects = new THREE.Mesh(coneGeometry, coneMaterial);
 
   scene.add(about);
   scene.add(contact);
-  scene.add(cv);
   scene.add(projects);
 
   about.position.x = 100;
   about.position.y = -550;
   contact.position.x = 200;
   contact.position.y = 300;
-  cv.position.x = -500;
-  cv.position.y = -300;
   projects.position.y = 500;
   projects.position.x = -800;
 
   let bounceControl = true;
-  let meshArray = [about, contact, cv, projects];
+  let meshArray = [about, contact, projects];
   let upArray = [true, true];
   let rightArray = [true, true];
 
@@ -148,10 +119,6 @@ export default function homeScene(meshClickCallback) {
     meshClickCallback('/About');
   });
 
-  cv.on('click', () => {
-    meshClickCallback('/cv');
-  });
-
   contact.on('click', () => {
     meshClickCallback('/contact');
   });
@@ -161,7 +128,6 @@ export default function homeScene(meshClickCallback) {
   });
 
   about.cursor = 'crosshair';
-  cv.cursor = 'crosshair';
   contact.cursor = 'crosshair';
   projects.cursor = 'crosshair';
 
