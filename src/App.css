@@ -14,7 +14,6 @@
 }
 
 body {
-  overflow: hidden;
   margin: 0;
 }
 
@@ -93,4 +92,7 @@ body {
   background-color: black;
   color: white;
   border-radius: 40px;
+}
+
+.projects {
 }

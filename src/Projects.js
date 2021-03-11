@@ -3,7 +3,7 @@ import { projectData } from './projectData';
 
 function Projects() {
   return (
-    <div>
+    <div className='projects'>
       <p className='about'>Projects Page</p>
       {projectData &&
         projectData.map((project) => (
