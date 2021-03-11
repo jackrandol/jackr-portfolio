@@ -95,4 +95,10 @@ body {
 }
 
 .projects {
+  width: 90%;
+}
+
+.project img {
+  width: 80%;
+  height: auto;
 }
