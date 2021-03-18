@@ -17,6 +17,18 @@ body {
   margin: 0;
 }
 
+h1 {
+  font-weight: 500;
+}
+
+h2 {
+  font-weight: 500;
+}
+
+.ticker {
+  background-color: transparent !important;
+}
+
 .sceneAbout {
   position: fixed;
 }
@@ -38,7 +50,7 @@ body {
   position: fixed;
 }
 
-.sceneX2 {
+/* .sceneX2 {
   height: var(--width);
   width: var(--width);
   animation: x2 var(--x-speed) linear infinite alternate;
@@ -53,9 +65,9 @@ body {
 
 .sceneX:hover {
   animation-play-state: paused;
-}
+} */
 
-@keyframes x {
+/* @keyframes x {
   100% {
     transform: translateX(calc(100vw - var(--width)));
   }
@@ -77,7 +89,7 @@ body {
   100% {
     transform: translateX(calc(-100vh - var(--width)));
   }
-}
+} */
 
 .pauseButton {
   position: fixed;
@@ -95,10 +107,82 @@ body {
 }
 
 .projects {
-  width: 90%;
+  position: relative;
+  width: 85%;
+  /* right: 20px; */
+  top: 70px;
+  left: 70px;
 }
 
+.project {
+  background-color: lightgray;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 10px 0px;
+}
 .project img {
-  width: 80%;
+  width: 95%;
   height: auto;
+}
+
+.homeArrow {
+  font-size: 50px;
+  color: black;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.homeArrow:hover {
+  color: red;
+}
+
+.pageView {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  column-gap: 20px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  width: 100%;
+  position: fixed;
+  align-items: center;
+  /* background-color: white; */
+  z-index: 5;
+}
+
+.gitHubLogo {
+  max-width: 20px;
+  height: auto;
+}
+
+.liveLogo {
+  width: 20px;
+  border: 2px plum solid;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.emailForm {
+  display: flex;
+  flex-flow: column;
+  max-width: 500px;
+  row-gap: 5px;
+}
+
+.emailForm-button {
+  font-style: normal;
+  font-size: 40px;
+  padding: 0px 15px;
+  background-color: transparent;
+  border: none;
+}
+
+.emailForm-button:hover {
+  background-color: black;
+  color: white;
+  border-radius: 40px;
 }
