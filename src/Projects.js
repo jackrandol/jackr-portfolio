@@ -17,29 +17,43 @@ function Projects() {
           projectData.map((project) => (
             <div className='project'>
               <h1>{project.title}</h1>
-              <p>{project.description}</p>
-              <h2>Features:</h2>
-              <p>{project.features}</p>
-              <h2>Tech Stack:</h2>
-              <p>{project.stack}</p>
               <img src={project.image} alt={project.title}></img>
-              <div className='links'>
-                {project.gitHubUrl && (
-                  <div>
-                    <img
-                      className='gitHubLogo'
-                      src={GitHubLogo}
-                      alt='github logo'
-                    ></img>
-                    <a href={project.gitHubUrl}>view code on github</a>
+              <div className='projects-info'>
+                <div className='projects-description'>
+                  <h2>Overview:</h2>
+                  <p>{project.description}</p>
+                  <h2>Features:</h2>
+                  <p>{project.features}</p>
+                </div>
+                <div className='projects-tech'>
+                  <h2>Tech Stack:</h2>
+                  <ul>
+                    {project.stack &&
+                      project.stack.map((tech) => <li>{tech}</li>)}
+                  </ul>
+                  <div className='links'>
+                    {project.gitHubUrl && (
+                      <a href={project.gitHubUrl}>
+                        <div className='externalLink'>
+                          <img
+                            className='gitHubLogo'
+                            src={GitHubLogo}
+                            alt='github logo'
+                          ></img>
+                          view code on github
+                        </div>
+                      </a>
+                    )}
+                    {project.liveUrl && (
+                      <a href={project.liveUrl}>
+                        <div className='externalLink'>
+                          <div className='liveLogo'></div>
+                          view project live
+                        </div>
+                      </a>
+                    )}
                   </div>
-                )}
-                {project.liveUrl && (
-                  <div>
-                    <div className='liveLogo'></div>
-                    <a href={project.liveUrl}>view project live</a>
-                  </div>
-                )}
+                </div>
               </div>
             </div>
           ))}

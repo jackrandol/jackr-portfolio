@@ -10,8 +10,16 @@ export const projectData = [
 When the image cards are clicked a modal slides out from the left-hand side and the image appears larger and there is a section where people can leave comments and feedback. Images can also be deleted here and will be removed from the imageboard completely.
 
 Users can navigate with the left and right arrow inside the modal to click to next and previous images.`,
-    stack:
-      'HTML, CSS, JavaScript, Node.js, Express, PostgreSQL, AWS S3, Vue.js',
+    stack: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'Node.js',
+      'Express',
+      'PostgreSQL',
+      'AWS S3',
+      'Vue.js',
+    ],
     gitHubUrl: 'https://github.com/jackrandol/knitables-imageboard',
   },
   {
@@ -22,7 +30,15 @@ Users can navigate with the left and right arrow inside the modal to click to ne
       'https://github.com/jackrandol/petition/raw/master/registerGuide.gif',
     features:
       'Users can create an account, update their profile information with age, city and website, and sign their name by drawing on a canvas. People who have signed the petition can view the names and cities of others who have signed. By clicking on the city of someone who has signed they can view all the people in that location who have also signed.',
-    stack: 'Node.js, Express with Handlebars, PostgreSQL, JavaScript',
+    stack: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'Node.js',
+      'Express',
+      'PostgreSQL',
+      'Handlebars',
+    ],
     gitHubUrl: 'https://github.com/jackrandol/petition',
     liveUrl: 'https://pickle-o.herokuapp.com',
   },
@@ -33,8 +49,19 @@ Users can navigate with the left and right arrow inside the modal to click to ne
     image:
       'https://github.com/jackrandol/knitables-II/raw/master/public/PreviewProjectPages.gif',
     features: `Users can sign up or log in with a user account and first edit their profile with a picture of themselves and a small text about themselves. In the 'Knit' section users are asked to upload different images to three segments of a sweater, body, left sleeve and right sleeve. After the users uploads three images ( stored with AWS S3 in the cloud ) they will choose a color for the "ribbed" edges of the sweater. In the 'Preview' section users can then view their sweater with their images mapped onto a three dimensional model. In the 'Projects' section users can view all projects from other users and make/read comments on a comment wall.`,
-    stack:
-      'HTML, CSS, JavaScript, Node.js, Express, bcrypt/salt, PostgreSQL, Three.js,  Moment.js, React with Redux',
+    stack: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'Node.js',
+      'Express',
+      'bcrypt/salt',
+      'Three.js',
+      'Moment.js',
+      'PostgreSQL',
+      'React',
+      'Redux',
+    ],
     gitHubUrl: 'https://github.com/jackrandol/knitables-II',
     liveUrl: 'http://knitables.herokuapp.com/',
     requestPassword: `This project is live but you will need a password to access the page, just drop me a line and I'm happy to share!`,
@@ -47,7 +74,18 @@ Users can navigate with the left and right arrow inside the modal to click to ne
       'https://res.cloudinary.com/ripsydidit/image/upload/v1615498290/fakultaetNullScreenShot.png',
     features:
       'This is a full stack web app built with React.js.  New event records can be uploaded by administrators via the backend hosted on Heroku.  Event records are displayed for upcoming events and also archived in the event archive page.  The next upcoming event will be displayed in a banner on the right hand side of the page.  Web design was done by ',
-    stack: 'MongoDB, React, Redux, Node.js, Express, bcrypt/salt, JWT',
+    stack: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'Node.js',
+      'Express',
+      'MongoDB',
+      'bcrypt/salt',
+      'JWT',
+      'React',
+      'Redux',
+    ],
     liveUrl: 'https://fakultaetnull.org',
   },
   {
@@ -59,5 +97,6 @@ Users can navigate with the left and right arrow inside the modal to click to ne
     features:
       'Users can enter in a name of an artist or song and select the respective song/artist from the selector.  Album results appear in an infinite scroll.',
     gitHubUrl: 'https://github.com/jackrandol/spotify-search',
+    stack: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Express', 'jQuery'],
   },
 ];
