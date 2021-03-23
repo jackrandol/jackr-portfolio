@@ -3,7 +3,7 @@ import aboutImage from './assets/about.jpg';
 import contactImage from './assets/contact.png';
 import projectImage from './assets/projects.png';
 
-import { Interaction } from 'three.interaction';
+// import { Interaction } from 'three.interaction';
 
 export default function homeScene(meshClickCallback) {
   var scene = new THREE.Scene();
@@ -60,7 +60,7 @@ export default function homeScene(meshClickCallback) {
   let upArray = [true, true];
   let rightArray = [true, true];
 
-  const interaction = new Interaction(renderer, scene, camera);
+  // const interaction = new Interaction(renderer, scene, camera);
 
   let pause = document.getElementById('pauseButton');
   pause.onclick = () => {
@@ -75,21 +75,21 @@ export default function homeScene(meshClickCallback) {
     }
   };
 
-  about.on('click', () => {
-    meshClickCallback('/About');
-  });
+  // about.on('click', () => {
+  //   meshClickCallback('/About');
+  // });
 
-  contact.on('click', () => {
-    meshClickCallback('/contact');
-  });
+  // contact.on('click', () => {
+  //   meshClickCallback('/contact');
+  // });
 
-  projects.on('click', () => {
-    meshClickCallback('/projects');
-  });
+  // projects.on('click', () => {
+  //   meshClickCallback('/projects');
+  // });
 
-  about.cursor = 'crosshair';
-  contact.cursor = 'crosshair';
-  projects.cursor = 'crosshair';
+  // about.cursor = 'crosshair';
+  // contact.cursor = 'crosshair';
+  // projects.cursor = 'crosshair';
 
   let animate = () => {
     requestAnimationFrame(animate);
