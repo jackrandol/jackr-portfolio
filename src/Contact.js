@@ -10,10 +10,11 @@ function ContactForm() {
 
   return (
     <form className='emailForm' onSubmit={handleSubmit}>
-      <label htmlFor='email'>Email Address</label>
+      <h2>send me a message</h2>
+      <label htmlFor='email'>your email address</label>
       <input id='email' type='email' name='email' />
       <ValidationError prefix='Email' field='email' errors={state.errors} />
-      <label htmlFor='message'>Message</label>
+      <label htmlFor='message'>message</label>
       <textarea id='message' name='message' />
       <ValidationError prefix='Message' field='message' errors={state.errors} />
       <button
@@ -37,11 +38,10 @@ function Contact() {
         <p className='about'>Contact</p>
       </div>
       <div className='projects'>
+        <a href='mailto:jackrandol@gmail.com'>
+          <div className='contact-email'>send an email</div>
+        </a>
         <ContactForm />
-        <p>or</p>
-        <div className='contact-email'>
-          <a href='mailto:jackrandol@gmail.com'>send email</a>
-        </div>
       </div>
     </div>
   );

@@ -214,17 +214,17 @@ a {
   align-items: center;
   justify-content: center;
   font-style: normal;
-  padding: 0px 15px;
-  background-color: transparent;
   border: 1px dashed black;
   border-radius: 20px;
-  margin: 10px 0px;
   font-size: 20px;
   width: 180px;
   cursor: pointer;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
-.emailForm-button:hover {
+.emailForm-button:hover,
+.contact-email:hover {
   background-color: black;
   color: white;
   border-radius: 40px;

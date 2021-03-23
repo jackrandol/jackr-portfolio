@@ -24,6 +24,7 @@ function Projects() {
                   <p>{project.description}</p>
                   <h2>Features:</h2>
                   <p>{project.features}</p>
+                  {project.requestPassword && <p>{project.requestPassword}</p>}
                 </div>
                 <div className='projects-tech'>
                   <h2>Tech Stack:</h2>
