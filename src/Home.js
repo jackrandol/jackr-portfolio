@@ -21,6 +21,12 @@ function Home(props) {
       <NavLink className='homeArrow' to={'/about'}>
         about
       </NavLink>
+      <NavLink className='homeArrow' to={'/contact'}>
+        contact
+      </NavLink>
+      <NavLink className='homeArrow' to={'/projects'}>
+        projects
+      </NavLink>
       <div className='sceneAbout'></div>
       <div className='pauseButton' id='pauseButton'>
         PAUSE
