@@ -1,13 +1,14 @@
 import React from 'react';
 import Ticker from 'react-ticker';
+import nameImage from './assets/logoticker.png';
 
 function Banner() {
   return (
     <div>
-      <Ticker>
+      <Ticker speed={4}>
         {({ index }) => (
           <>
-            <h1>Jack Randol...............</h1>
+            <img src={nameImage} alt='jack randol' />
           </>
         )}
       </Ticker>

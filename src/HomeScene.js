@@ -1,11 +1,11 @@
 import * as THREE from 'three';
 import aboutImage from './assets/about.jpg';
-import contactImage from './assets/contact.jpg';
-import projectImage from './assets/projects.jpg';
+import contactImage from './assets/contact.png';
+import projectImage from './assets/projects.png';
 
 import { Interaction } from 'three.interaction';
 
-export default function homeScene(meshClickCallback) {
+export default function homeScene(meshClickCallback, meshHoverCallback) {
   var scene = new THREE.Scene();
   var camera = new THREE.PerspectiveCamera(
     75,
@@ -35,7 +35,7 @@ export default function homeScene(meshClickCallback) {
   var sphereGeometry = new THREE.SphereBufferGeometry(300, 40, 32);
   var sphereMaterial = new THREE.MeshPhongMaterial({});
 
-  var coneGeometry = new THREE.ConeGeometry(230, 600, 200);
+  var coneGeometry = new THREE.ConeGeometry(280, 700, 200);
   var coneMaterial = new THREE.MeshPhongMaterial();
 
   sphereMaterial.map = loader.load(contactImage);
@@ -43,8 +43,8 @@ export default function homeScene(meshClickCallback) {
   coneMaterial.map = loader.load(projectImage);
 
   var contact = new THREE.Mesh(sphereGeometry, sphereMaterial);
-  var about = new THREE.Mesh(boxGeometry, boxMaterial);
-  var projects = new THREE.Mesh(coneGeometry, coneMaterial);
+  var about = new THREE.Mesh(sphereGeometry, boxMaterial);
+  var projects = new THREE.Mesh(sphereGeometry, coneMaterial);
 
   scene.add(about);
   scene.add(contact);
@@ -61,6 +61,58 @@ export default function homeScene(meshClickCallback) {
   let meshArray = [about, contact, projects];
   let upArray = [true, true];
   let rightArray = [true, true];
+
+  const interaction = new Interaction(renderer, scene, camera);
+  let pause = document.getElementById('pauseButton');
+  pause.onclick = () => {
+    console.log('pause clicked');
+    console.log('bounce control', bounceControl);
+    if (bounceControl === true) {
+      bounceControl = false;
+      pause.innerHTML = 'PLAY';
+    } else {
+      bounceControl = true;
+      pause.innerHTML = 'PAUSE';
+    }
+  };
+
+  about.on('click', () => {
+    meshClickCallback('/About');
+  });
+
+  contact.on('click', () => {
+    meshClickCallback('/contact');
+  });
+
+  projects.on('click', () => {
+    meshClickCallback('/projects');
+  });
+
+  // about.on('mouseover', () => {
+  //   meshHoverCallback('About');
+  // });
+
+  // about.on('mouseout', () => {
+  //   meshHoverCallback('Jack Randol');
+  // });
+
+  // projects.on('mouseover', () => {
+  //   meshHoverCallback('Projects');
+  // });
+  // projects.on('mouseout', () => {
+  //   meshHoverCallback('Jack Randol');
+  // });
+
+  // contact.on('mouseover', () => {
+  //   meshHoverCallback('Contact');
+  // });
+  // contact.on('mouseout', () => {
+  //   meshHoverCallback('Jack Randol');
+  // });
+
+  about.cursor = 'crosshair';
+  contact.cursor = 'crosshair';
+  projects.cursor = 'crosshair';
 
   let animate = () => {
     requestAnimationFrame(animate);
@@ -113,24 +165,6 @@ export default function homeScene(meshClickCallback) {
     renderer.render(scene, camera);
   };
 
-  const interaction = new Interaction(renderer, scene, camera);
-
-  about.on('click', () => {
-    meshClickCallback('/About');
-  });
-
-  contact.on('click', () => {
-    meshClickCallback('/contact');
-  });
-
-  projects.on('click', () => {
-    meshClickCallback('/projects');
-  });
-
-  about.cursor = 'crosshair';
-  contact.cursor = 'crosshair';
-  projects.cursor = 'crosshair';
-
   window.addEventListener('resize', onWindowResize, false);
   function onWindowResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
@@ -138,16 +172,5 @@ export default function homeScene(meshClickCallback) {
     renderer.setSize(window.innerWidth, window.innerHeight);
   }
 
-  let pause = document.getElementById('pauseButton');
-  pause.onclick = () => {
-    console.log('pause clicked');
-    if (bounceControl === true) {
-      bounceControl = false;
-      pause.innerHTML = 'PLAY';
-    } else {
-      bounceControl = true;
-      pause.innerHTML = 'PAUSE';
-    }
-  };
   animate();
 }

@@ -25,71 +25,30 @@ h2 {
   font-weight: 500;
 }
 
-.ticker {
-  background-color: transparent !important;
+.title {
+  background-color: transparent;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+}
+
+.title-name {
+  transform: scale(3, 0.5);
+  max-width: 100%;
 }
 
 .sceneAbout {
   position: fixed;
 }
 
-.sceneY,
-.sceneCV,
-.sceneProjects,
-.sceneContact {
-  height: var(--width);
-  width: var(--width);
-  animation: y var(--y-speed) linear infinite alternate;
-  position: fixed;
+text {
+  fill: black;
 }
-
-.sceneX {
-  height: var(--width);
-  width: var(--width);
-  animation: x var(--x-speed) linear infinite alternate;
-  position: fixed;
-}
-
-/* .sceneX2 {
-  height: var(--width);
-  width: var(--width);
-  animation: x2 var(--x-speed) linear infinite alternate;
-  position: fixed;
-  right: 0px;
-}
-
-.sceneY:hover {
-  animation-play-state: paused;
-  cursor: pointer;
-}
-
-.sceneX:hover {
-  animation-play-state: paused;
-} */
-
-/* @keyframes x {
-  100% {
-    transform: translateX(calc(100vw - var(--width)));
-  }
-}
-
-@keyframes y {
-  100% {
-    transform: translateY(calc(100vh - var(--width)));
-  }
-}
-
-@keyframes y2 {
-  100% {
-    transform: translateY(calc(100vh - var(--width)));
-  }
-}
-
-@keyframes x2 {
-  100% {
-    transform: translateX(calc(-100vh - var(--width)));
-  }
-} */
 
 .pauseButton {
   position: fixed;
@@ -98,6 +57,7 @@ h2 {
   font-style: normal;
   font-size: 40px;
   padding: 0px 15px;
+  cursor: pointer;
 }
 
 .pauseButton:hover {
@@ -109,7 +69,6 @@ h2 {
 .projects {
   position: relative;
   width: 85%;
-  /* right: 20px; */
   top: 70px;
   left: 70px;
 }
@@ -187,6 +146,9 @@ h2 {
   border-radius: 20px;
   max-width: 180px;
 }
+.links {
+  margin-top: 50px;
+}
 
 .gitHubLogo {
   max-width: 20px;
@@ -224,14 +186,42 @@ a {
   flex-flow: column;
   max-width: 500px;
   row-gap: 5px;
+  background-color: lightgray;
+  border-radius: 20px;
+  padding: 15px 20px;
+  margin: 10px 0px;
 }
 
 .emailForm-button {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
   font-style: normal;
-  font-size: 40px;
   padding: 0px 15px;
   background-color: transparent;
-  border: none;
+  border: 1px dashed black;
+  border-radius: 20px;
+  margin: 10px 0px;
+  font-size: 20px;
+  width: 180px;
+  cursor: pointer;
+}
+
+.contact-email {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  padding: 0px 15px;
+  background-color: transparent;
+  border: 1px dashed black;
+  border-radius: 20px;
+  margin: 10px 0px;
+  font-size: 20px;
+  width: 180px;
+  cursor: pointer;
 }
 
 .emailForm-button:hover {
@@ -271,5 +261,13 @@ ul {
   }
   .projects-description {
     margin-bottom: 10px;
+  }
+  .title {
+    font-size: 8px;
+    position: fixed;
+    z-index: 5;
+  }
+  .title-name {
+    transform: scale(3, 1);
   }
 }

@@ -1,15 +1,57 @@
 export const projectData = [
   {
+    title: 'Knitables-II',
+    description:
+      'Knitables-II is a tool for visualizing sweater patterns on a three dimensional form developed with React. User projects are visible to other users who can comment and share ideas.',
+    image:
+      'https://github.com/jackrandol/knitables-II/raw/master/public/PreviewProjectPages.gif',
+    features: `Users can register or log in with a user account and first edit their profile with a picture of themselves and a small text about themselves. In the 'Knit' section users are asked to upload different images to three segments of a sweater, body, left sleeve and right sleeve. After the users uploads three images ( stored with AWS S3 in the cloud ) and select a color for the "ribbed" edges of the sweater. In the 'Preview' section users can then view their sweater with their images mapped onto a three dimensional model. In the 'Projects' section users can view projects from other users and make/read comments on a comment wall.`,
+    stack: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'Node.js',
+      'Express',
+      'bcrypt/salt',
+      'Three.js',
+      'Moment.js',
+      'PostgreSQL',
+      'React',
+      'Redux',
+    ],
+    gitHubUrl: 'https://github.com/jackrandol/knitables-II',
+    liveUrl: 'http://knitables.herokuapp.com/',
+    requestPassword: `This project is live but you will need a password to access the page, just drop me a line and I'm happy to share!`,
+  },
+  {
+    title: 'Fakultät Null',
+    description:
+      'Fakultät Null is an initiative of the Freieklasse and Interflugs organisations which are part of the Universtät der Kunst in Berlin.  This website serves an alternative platform for meeting, exchanging knowledge and artistic practices.',
+    image:
+      'https://res.cloudinary.com/ripsydidit/image/upload/v1615498290/fakultaetNullScreenShot.png',
+    features:
+      'This is a full stack web app built with React.js.  New event records can be created, read, edited and deleted by administrators via the backend hosted on Heroku.  Event records are displayed for upcoming events and also archived in the event archive page.  The next upcoming event will be displayed in a banner on the right hand side of the page.  Web design was done by Kristen Cammack and staff at Interflugs.',
+    stack: [
+      'HTML',
+      'CSS',
+      'JavaScript',
+      'Node.js',
+      'Express',
+      'MongoDB',
+      'bcrypt/salt',
+      'JWT',
+      'React',
+      'Redux',
+    ],
+    liveUrl: 'https://fakultaetnull.org',
+  },
+  {
     title: 'Knitables',
     description:
       'Knitables-I is a space for knitters to upload patterns or images they would like to make into patterns made with Vue.js.',
     image:
       'https://github.com/jackrandol/knitables-imageboard/blob/master/ModalTour.gif?raw=true',
-    features: `Images are uploaded in the yellow bar at the top with a title, comment and username. There is no actual user sign up for the site but users can enter in their name or handle if they wish. Photos are uploaded to the cloud with AWS and then appear in a reverse chronological order, latest image will up upper left most corner.
-
-When the image cards are clicked a modal slides out from the left-hand side and the image appears larger and there is a section where people can leave comments and feedback. Images can also be deleted here and will be removed from the imageboard completely.
-
-Users can navigate with the left and right arrow inside the modal to click to next and previous images.`,
+    features: `Images are uploaded in the yellow bar at the top with a title, comment and username. There is no user registration but users can enter in their name or handle if they wish. Photos are uploaded to the cloud with AWS and then appear in a reverse chronological order, latest image will up upper left most corner.  When the image cards are clicked a modal slides out from the left-hand side and the image appears larger and there is a section where people can leave comments and feedback. Images can also be deleted here and will be removed from the imageboard completely. Users can navigate with the left and right arrow inside the modal to click to next and previous images.`,
     stack: [
       'HTML',
       'CSS',
@@ -42,52 +84,7 @@ Users can navigate with the left and right arrow inside the modal to click to ne
     gitHubUrl: 'https://github.com/jackrandol/petition',
     liveUrl: 'https://pickle-o.herokuapp.com',
   },
-  {
-    title: 'Knitables-II',
-    description:
-      'Knitables-II is a tool for visualizing sweater patterns on a three dimensional form developed with React. User projects are visible to other users who can comment and share ideas.',
-    image:
-      'https://github.com/jackrandol/knitables-II/raw/master/public/PreviewProjectPages.gif',
-    features: `Users can sign up or log in with a user account and first edit their profile with a picture of themselves and a small text about themselves. In the 'Knit' section users are asked to upload different images to three segments of a sweater, body, left sleeve and right sleeve. After the users uploads three images ( stored with AWS S3 in the cloud ) they will choose a color for the "ribbed" edges of the sweater. In the 'Preview' section users can then view their sweater with their images mapped onto a three dimensional model. In the 'Projects' section users can view all projects from other users and make/read comments on a comment wall.`,
-    stack: [
-      'HTML',
-      'CSS',
-      'JavaScript',
-      'Node.js',
-      'Express',
-      'bcrypt/salt',
-      'Three.js',
-      'Moment.js',
-      'PostgreSQL',
-      'React',
-      'Redux',
-    ],
-    gitHubUrl: 'https://github.com/jackrandol/knitables-II',
-    liveUrl: 'http://knitables.herokuapp.com/',
-    requestPassword: `This project is live but you will need a password to access the page, just drop me a line and I'm happy to share!`,
-  },
-  {
-    title: 'Fakultät Null',
-    description:
-      'Fakultät Null is an initiative of the Freieklasse and Interflugs organisations which are part of the Universtät der Kunst in Berlin.  This website serves an alternative platform for meeting, exchanging knowledge and artistic practices.',
-    image:
-      'https://res.cloudinary.com/ripsydidit/image/upload/v1615498290/fakultaetNullScreenShot.png',
-    features:
-      'This is a full stack web app built with React.js.  New event records can be uploaded by administrators via the backend hosted on Heroku.  Event records are displayed for upcoming events and also archived in the event archive page.  The next upcoming event will be displayed in a banner on the right hand side of the page.  Web design was done by ',
-    stack: [
-      'HTML',
-      'CSS',
-      'JavaScript',
-      'Node.js',
-      'Express',
-      'MongoDB',
-      'bcrypt/salt',
-      'JWT',
-      'React',
-      'Redux',
-    ],
-    liveUrl: 'https://fakultaetnull.org',
-  },
+
   {
     title: 'Spotify Search',
     description:

@@ -38,6 +38,10 @@ function Contact() {
       </div>
       <div className='projects'>
         <ContactForm />
+        <p>or</p>
+        <div className='contact-email'>
+          <a href='mailto:jackrandol@gmail.com'>send email</a>
+        </div>
       </div>
     </div>
   );

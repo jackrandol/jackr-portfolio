@@ -1,6 +1,9 @@
 import React from 'react';
 import CV from './assets/JackRandolCV0321.pdf';
 import { NavLink } from 'react-router-dom';
+import GitHubLogo from './assets/GitHub-Mark-120px-plus.png';
+import LinkedInLogo from './assets/linkedin-black-icon-logo.png';
+import Paper from './assets/paper.png';
 
 export default function About() {
   return (
@@ -13,11 +16,46 @@ export default function About() {
       </div>
       <div className='projects'>
         <h1>
-          Jack is a web developer and designer with an emphasis on creating
-          lively user experiences.
+          I am a web developer and designer with an emphasis on creating lively
+          user experiences. I went to art school and found myself in a
+          comfortable place between the worlds of logic and design with web
+          development.
+          <br />
+          <br />I work with HTML, CSS, JavaScript, jQuery, Node.js, Express,
+          MongoDB PostgreSQL, React.js, Redux, AWS, Cloudinary, Three.js and
+          collaborate with Git.
         </h1>
-        <div>
-          <a href={CV}>cv</a>
+        <div className='links'>
+          <a href={CV}>
+            <div className='externalLink'>
+              <img
+                className='gitHubLogo'
+                src={Paper}
+                alt='piece of paper'
+              ></img>
+              cv
+            </div>
+          </a>
+          <a href='https://www.linkedin.com/in/jack-randol/'>
+            <div className='externalLink'>
+              <img
+                className='gitHubLogo'
+                src={LinkedInLogo}
+                alt='LinkedIn logo'
+              ></img>
+              visit me on linkedIn
+            </div>
+          </a>
+          <a href='https://github.com/jackrandol'>
+            <div className='externalLink'>
+              <img
+                className='gitHubLogo'
+                src={GitHubLogo}
+                alt='github logo'
+              ></img>
+              visit me on GitHub
+            </div>
+          </a>
         </div>
       </div>
     </div>
