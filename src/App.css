@@ -230,6 +230,14 @@ a {
   border-radius: 40px;
 }
 
+.tempNav {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 100px;
+  z-index: 5;
+}
+
 li {
   list-style-type: none;
   padding: 0;

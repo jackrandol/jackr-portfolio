@@ -18,15 +18,17 @@ function Home(props) {
       <div className='title'>
         <h1 className='title-name'>Jack Randol</h1>
       </div>
-      <NavLink className='homeArrow' to={'/about'}>
-        about
-      </NavLink>
-      <NavLink className='homeArrow' to={'/contact'}>
-        contact
-      </NavLink>
-      <NavLink className='homeArrow' to={'/projects'}>
-        projects
-      </NavLink>
+      <div className='tempNav'>
+        <NavLink className='homeArrow' to={'/about'}>
+          about
+        </NavLink>
+        <NavLink className='homeArrow' to={'/contact'}>
+          contact
+        </NavLink>
+        <NavLink className='homeArrow' to={'/projects'}>
+          projects
+        </NavLink>
+      </div>
       <div className='sceneAbout'></div>
       <div className='pauseButton' id='pauseButton'>
         PAUSE
