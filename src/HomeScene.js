@@ -3,7 +3,7 @@ import aboutImage from './assets/about.jpg';
 import contactImage from './assets/contact.png';
 import projectImage from './assets/projects.png';
 
-// import { Interaction } from 'three.interaction';
+import { Interaction } from 'three.interaction';
 
 export default function homeScene(meshClickCallback) {
   var scene = new THREE.Scene();
@@ -60,7 +60,7 @@ export default function homeScene(meshClickCallback) {
   let upArray = [true, true];
   let rightArray = [true, true];
 
-  // const interaction = new Interaction(renderer, scene, camera);
+  const interaction = new Interaction(renderer, scene, camera);
 
   let pause = document.getElementById('pauseButton');
   pause.onclick = () => {
