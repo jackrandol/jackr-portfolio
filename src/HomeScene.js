@@ -60,7 +60,7 @@ export default function homeScene(meshClickCallback) {
   let upArray = [true, true];
   let rightArray = [true, true];
 
-  const interaction = new Interaction(renderer, scene, camera);
+  // const interaction = new Interaction(renderer, scene, camera);
 
   let pause = document.getElementById('pauseButton');
   pause.onclick = () => {
