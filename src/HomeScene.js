@@ -5,7 +5,7 @@ import projectImage from './assets/projects.png';
 
 import { Interaction } from 'three.interaction';
 
-export default function homeScene(meshClickCallback, meshHoverCallback) {
+export default function homeScene(meshClickCallback) {
   var scene = new THREE.Scene();
   var camera = new THREE.PerspectiveCamera(
     75,
@@ -29,13 +29,11 @@ export default function homeScene(meshClickCallback, meshHoverCallback) {
   scene.add(light2);
   var loader = new THREE.TextureLoader();
 
-  var boxGeometry = new THREE.BoxGeometry(500, 500, 500);
   var boxMaterial = new THREE.MeshPhongMaterial();
 
   var sphereGeometry = new THREE.SphereBufferGeometry(300, 40, 32);
   var sphereMaterial = new THREE.MeshPhongMaterial({});
 
-  var coneGeometry = new THREE.ConeGeometry(280, 700, 200);
   var coneMaterial = new THREE.MeshPhongMaterial();
 
   sphereMaterial.map = loader.load(contactImage);
@@ -63,6 +61,7 @@ export default function homeScene(meshClickCallback, meshHoverCallback) {
   let rightArray = [true, true];
 
   const interaction = new Interaction(renderer, scene, camera);
+
   let pause = document.getElementById('pauseButton');
   pause.onclick = () => {
     console.log('pause clicked');
@@ -87,28 +86,6 @@ export default function homeScene(meshClickCallback, meshHoverCallback) {
   projects.on('click', () => {
     meshClickCallback('/projects');
   });
-
-  // about.on('mouseover', () => {
-  //   meshHoverCallback('About');
-  // });
-
-  // about.on('mouseout', () => {
-  //   meshHoverCallback('Jack Randol');
-  // });
-
-  // projects.on('mouseover', () => {
-  //   meshHoverCallback('Projects');
-  // });
-  // projects.on('mouseout', () => {
-  //   meshHoverCallback('Jack Randol');
-  // });
-
-  // contact.on('mouseover', () => {
-  //   meshHoverCallback('Contact');
-  // });
-  // contact.on('mouseout', () => {
-  //   meshHoverCallback('Jack Randol');
-  // });
 
   about.cursor = 'crosshair';
   contact.cursor = 'crosshair';
