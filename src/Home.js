@@ -114,7 +114,7 @@ function Home(props) {
         />
         <ContactSphere
           onClick={() => meshClickCallback('contact')}
-          position={[2.3, -2, 0]}
+          position={[2, -2, 0]}
           onPointerEnter={(e) => toggleHover('contact', true)}
           onPointerLeave={(e) => toggleHover('jack randol', false)}
           pause={pause}

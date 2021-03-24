@@ -16,10 +16,10 @@ export default function About() {
       </div>
       <div className='projects'>
         <h1>
-          I am a web developer and designer with an emphasis on creating lively
-          user experiences. I went to art school and found myself in a
-          comfortable place between the worlds of logic and design with web
-          development.
+          I am a web developer and designer that puts emphasis on creating
+          lively user experiences. After studying and working in the field of
+          design I found myself comfortable between the worlds of logic and
+          design with web development.
           <br />
           <br />I work with HTML, CSS, JavaScript, jQuery, Node.js, Express,
           MongoDB PostgreSQL, React.js, Redux, AWS, Cloudinary, Three.js and
