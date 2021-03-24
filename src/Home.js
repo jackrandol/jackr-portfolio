@@ -86,6 +86,7 @@ function Home(props) {
   const [hovered, setHovered] = useState(false);
   const [navText, setNavText] = useState('jack randol');
   const [pause, togglePause] = useState(false);
+  const [pauseText, setPauseText] = useState('PAUSE');
 
   const toggleHover = (mesh, hover) => {
     setNavText(mesh);
@@ -95,6 +96,16 @@ function Home(props) {
   useEffect(() => {
     document.body.style.cursor = hovered ? 'pointer' : 'auto';
   }, [hovered]);
+
+  const handlePauseClick = () => {
+    console.log('toggled');
+    togglePause(!pause);
+    if (!pause) {
+      setPauseText('PLAY');
+    } else {
+      setPauseText('PAUSE');
+    }
+  };
 
   return (
     <>
@@ -131,12 +142,11 @@ function Home(props) {
 
       <div
         onClick={(e) => {
-          togglePause(!pause);
+          handlePauseClick();
         }}
         className='pauseButton'
-        id='pauseButton'
       >
-        PAUSE
+        {pauseText}
       </div>
     </>
   );

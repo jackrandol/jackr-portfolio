@@ -61,19 +61,6 @@ export default function homeScene(meshClickCallback) {
   let upArray = [true, true];
   let rightArray = [true, true];
 
-  let pause = document.getElementById('pauseButton');
-  pause.onclick = () => {
-    console.log('pause clicked');
-    console.log('bounce control', bounceControl);
-    if (bounceControl === true) {
-      bounceControl = false;
-      pause.innerHTML = 'PLAY';
-    } else {
-      bounceControl = true;
-      pause.innerHTML = 'PAUSE';
-    }
-  };
-
   let animate = () => {
     requestAnimationFrame(animate);
     for (var i = 0; i < meshArray.length; i++) {
