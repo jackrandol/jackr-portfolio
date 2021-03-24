@@ -1,7 +1,5 @@
 import React, { useEffect, useRef, useState, useMemo } from 'react';
-import HomeScene from './HomeScene';
 import { Canvas, useFrame } from 'react-three-fiber';
-import { NavLink } from 'react-router-dom';
 import * as THREE from 'three';
 import aboutImage from './assets/about.jpg';
 import contactImage from './assets/contact.png';
@@ -11,8 +9,6 @@ import { withRouter } from 'react-router-dom';
 
 const AboutSphere = (props) => {
   const mesh = useRef();
-
-  const [active, setActive] = useState(false);
 
   useFrame(() => {
     mesh.current.rotation.x = mesh.current.rotation.y += 0.01;
@@ -32,8 +28,6 @@ const AboutSphere = (props) => {
 
 const ContactSphere = (props) => {
   const mesh = useRef();
-
-  const [active, setActive] = useState(false);
 
   useFrame(() => {
     mesh.current.rotation.x = mesh.current.rotation.y += 0.01;
@@ -55,8 +49,6 @@ const ContactSphere = (props) => {
 };
 const ProjectsSphere = (props) => {
   const mesh = useRef();
-
-  const [active, setActive] = useState(false);
 
   useFrame(() => {
     mesh.current.rotation.x = mesh.current.rotation.y += 0.01;
@@ -83,14 +75,12 @@ function Home(props) {
     props.history.push(mesh);
   };
 
-  useEffect(() => {
-    // HomeScene(meshClickCallback);
-  });
+  const [navText, setNavText] = useState('jack randol');
 
   return (
     <>
       <div className='title'>
-        <h1 className='title-name'>Jack Randol</h1>
+        <h1 className='title-name'>{navText}</h1>
       </div>
       <Canvas>
         <ambientLight intensity={0.5} />
@@ -99,14 +89,20 @@ function Home(props) {
         <AboutSphere
           onClick={() => meshClickCallback('about')}
           position={[-1.2, 0, 0]}
+          onPointerEnter={(e) => setNavText('about')}
+          onPointerLeave={(e) => setNavText('jack randol')}
         />
         <ContactSphere
           onClick={() => meshClickCallback('contact')}
           position={[0, -2, 0]}
+          onPointerEnter={(e) => setNavText('contact')}
+          onPointerLeave={(e) => setNavText('jack randol')}
         />
         <ProjectsSphere
           onClick={() => meshClickCallback('projects')}
           position={[0, 2, 0]}
+          onPointerEnter={(e) => setNavText('projects')}
+          onPointerLeave={(e) => setNavText('jack randol')}
         />
       </Canvas>
       {/* <div className='sceneAbout'></div> */}

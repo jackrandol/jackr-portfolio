@@ -31,7 +31,6 @@ export default function homeScene(meshClickCallback) {
 
   let raycaster = new THREE.Raycaster();
   let mouse = new THREE.Vector2();
-  let intersects;
 
   var boxMaterial = new THREE.MeshPhongMaterial();
 
