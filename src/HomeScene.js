@@ -29,6 +29,10 @@ export default function homeScene(meshClickCallback) {
   scene.add(light2);
   var loader = new THREE.TextureLoader();
 
+  let raycaster = new THREE.Raycaster();
+  let mouse = new THREE.Vector2();
+  let intersects;
+
   var boxMaterial = new THREE.MeshPhongMaterial();
 
   var sphereGeometry = new THREE.SphereBufferGeometry(300, 40, 32);
@@ -74,22 +78,6 @@ export default function homeScene(meshClickCallback) {
       pause.innerHTML = 'PAUSE';
     }
   };
-
-  // about.on('click', () => {
-  //   meshClickCallback('/About');
-  // });
-
-  // contact.on('click', () => {
-  //   meshClickCallback('/contact');
-  // });
-
-  // projects.on('click', () => {
-  //   meshClickCallback('/projects');
-  // });
-
-  // about.cursor = 'crosshair';
-  // contact.cursor = 'crosshair';
-  // projects.cursor = 'crosshair';
 
   let animate = () => {
     requestAnimationFrame(animate);
@@ -139,8 +127,17 @@ export default function homeScene(meshClickCallback) {
         }
       }
     }
+
     renderer.render(scene, camera);
   };
+
+  raycaster.setFromCamera(mouse, camera);
+
+  let intersectAbout = raycaster.intersectObject(about);
+
+  if (intersectAbout > 0) {
+    console.log('something intersected about!');
+  }
 
   window.addEventListener('resize', onWindowResize, false);
   function onWindowResize() {
@@ -148,6 +145,16 @@ export default function homeScene(meshClickCallback) {
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
   }
+
+  function onDocumentMouseMove(event) {
+    event.preventDefault();
+
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    console.log('mousemove', mouse.x, mouse.y);
+  }
+
+  document.addEventListener('mousemove', onDocumentMouseMove);
 
   animate();
 }
