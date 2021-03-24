@@ -1,4 +1,4 @@
-import React, { useRef, useState, useMemo } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import { Canvas, useFrame } from 'react-three-fiber';
 import * as THREE from 'three';
 import aboutImage from './assets/about.jpg';
@@ -9,9 +9,13 @@ import { withRouter } from 'react-router-dom';
 
 const AboutSphere = (props) => {
   const mesh = useRef();
-
+  useEffect(() => {
+    console.log('stuff?', props.stuff);
+  });
   useFrame(() => {
-    mesh.current.rotation.x = mesh.current.rotation.y += 0.01;
+    if (!props.pause) {
+      mesh.current.rotation.x = mesh.current.rotation.y += 0.01;
+    }
   });
 
   const texture = useMemo(() => new THREE.TextureLoader().load(aboutImage), []);
@@ -19,9 +23,9 @@ const AboutSphere = (props) => {
   return (
     <mesh {...props} ref={mesh}>
       <sphereGeometry args={[1, 32, 32]} />
-      <meshBasicMaterial attach='material' transparent side={THREE.DoubleSide}>
+      <meshPhongMaterial attach='material' transparent side={THREE.DoubleSide}>
         <primitive attach='map' object={texture} />
-      </meshBasicMaterial>
+      </meshPhongMaterial>
     </mesh>
   );
 };
@@ -30,7 +34,9 @@ const ContactSphere = (props) => {
   const mesh = useRef();
 
   useFrame(() => {
-    mesh.current.rotation.x = mesh.current.rotation.y += 0.01;
+    if (!props.pause) {
+      mesh.current.rotation.x = mesh.current.rotation.y += 0.01;
+    }
   });
 
   const texture = useMemo(
@@ -41,9 +47,9 @@ const ContactSphere = (props) => {
   return (
     <mesh {...props} ref={mesh}>
       <sphereGeometry args={[1, 32, 32]} />
-      <meshBasicMaterial attach='material' transparent side={THREE.DoubleSide}>
+      <meshPhongMaterial attach='material' transparent side={THREE.DoubleSide}>
         <primitive attach='map' object={texture} />
-      </meshBasicMaterial>
+      </meshPhongMaterial>
     </mesh>
   );
 };
@@ -51,7 +57,9 @@ const ProjectsSphere = (props) => {
   const mesh = useRef();
 
   useFrame(() => {
-    mesh.current.rotation.x = mesh.current.rotation.y += 0.01;
+    if (!props.pause) {
+      mesh.current.rotation.x = mesh.current.rotation.y += 0.01;
+    }
   });
 
   const texture = useMemo(
@@ -62,9 +70,9 @@ const ProjectsSphere = (props) => {
   return (
     <mesh {...props} ref={mesh}>
       <sphereGeometry args={[1, 32, 32]} />
-      <meshBasicMaterial attach='material' transparent side={THREE.DoubleSide}>
+      <meshPhongMaterial attach='material' transparent side={THREE.DoubleSide}>
         <primitive attach='map' object={texture} />
-      </meshBasicMaterial>
+      </meshPhongMaterial>
     </mesh>
   );
 };
@@ -75,7 +83,18 @@ function Home(props) {
     props.history.push(mesh);
   };
 
+  const [hovered, setHovered] = useState(false);
   const [navText, setNavText] = useState('jack randol');
+  const [pause, togglePause] = useState(false);
+
+  const toggleHover = (mesh, hover) => {
+    setNavText(mesh);
+    setHovered(hover);
+  };
+
+  useEffect(() => {
+    document.body.style.cursor = hovered ? 'pointer' : 'auto';
+  }, [hovered]);
 
   return (
     <>
@@ -88,26 +107,35 @@ function Home(props) {
         <pointLight position={[-10, -10, -10]} />
         <AboutSphere
           onClick={() => meshClickCallback('about')}
-          position={[-1.2, 0, 0]}
-          onPointerEnter={(e) => setNavText('about')}
-          onPointerLeave={(e) => setNavText('jack randol')}
+          position={[-2, 0, 0]}
+          onPointerEnter={(e) => toggleHover('about', true)}
+          onPointerLeave={(e) => toggleHover('jack randol', false)}
+          pause={pause}
         />
         <ContactSphere
           onClick={() => meshClickCallback('contact')}
-          position={[0, -2, 0]}
-          onPointerEnter={(e) => setNavText('contact')}
-          onPointerLeave={(e) => setNavText('jack randol')}
+          position={[2.3, -2, 0]}
+          onPointerEnter={(e) => toggleHover('contact', true)}
+          onPointerLeave={(e) => toggleHover('jack randol', false)}
+          pause={pause}
         />
         <ProjectsSphere
           onClick={() => meshClickCallback('projects')}
-          position={[0, 2, 0]}
-          onPointerEnter={(e) => setNavText('projects')}
-          onPointerLeave={(e) => setNavText('jack randol')}
+          position={[0.7, 1.8, 0.2]}
+          onPointerEnter={(e) => toggleHover('projects', true)}
+          onPointerLeave={(e) => toggleHover('jack randol', false)}
+          pause={pause}
+          className='projectsSphere'
         />
       </Canvas>
-      {/* <div className='sceneAbout'></div> */}
 
-      <div className='pauseButton' id='pauseButton'>
+      <div
+        onClick={(e) => {
+          togglePause(!pause);
+        }}
+        className='pauseButton'
+        id='pauseButton'
+      >
         PAUSE
       </div>
     </>
