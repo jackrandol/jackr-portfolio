@@ -92,17 +92,6 @@ function Home(props) {
       <div className='title'>
         <h1 className='title-name'>Jack Randol</h1>
       </div>
-      <div className='tempNav'>
-        <NavLink className='homeArrow' to={'/about'}>
-          about
-        </NavLink>
-        <NavLink className='homeArrow' to={'/contact'}>
-          contact
-        </NavLink>
-        <NavLink className='homeArrow' to={'/projects'}>
-          projects
-        </NavLink>
-      </div>
       <Canvas>
         <ambientLight intensity={0.5} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
