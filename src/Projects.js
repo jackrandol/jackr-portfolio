@@ -15,7 +15,7 @@ function Projects() {
       <div className='projects'>
         {projectData &&
           projectData.map((project) => (
-            <div className='project'>
+            <div className='project' key={project.title}>
               <h1>{project.title}</h1>
               <img src={project.image} alt={project.title}></img>
               <div className='projects-info'>
@@ -30,7 +30,7 @@ function Projects() {
                   <h2>Tech Stack:</h2>
                   <ul>
                     {project.stack &&
-                      project.stack.map((tech) => <li>{tech}</li>)}
+                      project.stack.map((tech) => <li key={tech}>{tech}</li>)}
                   </ul>
                   <div className='links'>
                     {project.gitHubUrl && (
