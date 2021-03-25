@@ -6,7 +6,6 @@ import ContactSphere from './ContactSphere';
 import { withRouter } from 'react-router-dom';
 
 function Home(props) {
-  const { size } = useThree;
   const meshClickCallback = (mesh) => {
     props.history.push(mesh);
   };
