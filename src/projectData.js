@@ -21,7 +21,7 @@ export const projectData = [
     ],
     gitHubUrl: 'https://github.com/jackrandol/knitables-II',
     liveUrl: 'http://knitables.herokuapp.com/',
-    requestPassword: `This project is live but you will need a password to access the page, just drop me a line and I'm happy to share!`,
+    requestPassword: `This project is live but you will need a password to access the page, send me an email and I'm happy to share.`,
   },
   {
     title: 'Fakultät Null',
