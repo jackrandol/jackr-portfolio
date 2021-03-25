@@ -17,6 +17,9 @@ const ContactSphere = (props) => {
 
   useEffect(() => {
     document.body.style.cursor = hovered ? 'pointer' : 'auto';
+    return function cleanup() {
+      document.body.style.cursor = 'auto';
+    };
   }, [hovered]);
 
   const toggleHover = (hover) => {
